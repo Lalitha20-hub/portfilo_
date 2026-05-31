@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naga Sai Lalitha Kayala | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: "#FFFFFF",
+                        cardBg: "rgba(255, 255, 255, 0.9)",
+                        neonBlue: "#2563EB",
+                        neonPurple: "#7C3AED",
+                        neonCyan: "#0891B2",
+                        hackerGreen: "#16A34A",
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #FAFAFB;
+            font-family: 'Poppins', sans-serif;
+            color: #1E293B;
+        }
+        .will-change-transform {
+            will-change: transform;
+        }
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-spin-slow {
+            animation: spin-slow 30s linear infinite;
+        }
+        .glow-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glow-card:hover {
+            box-shadow: 0 30px 60px -15px rgba(37, 99, 235, 0.06);
+            transform: translateY(-2px);
+        }
+        .cursor-blink::after {
+            content: '|';
+            animation: blink 0.8s infinite;
+            color: #2563EB;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+    </style>
+</head>
+
+<body class="text-slate-800 min-h-screen relative overflow-x-hidden antialiased">
+
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
+        <div class="absolute top-[-10%] right-[-10%] w-[60vw] h-[60vw] bg-blue-100/30 rounded-full blur-[160px]"></div>
+        <div class="absolute top-[20%] left-[-15%] w-[55vw] h-[55vw] bg-purple-100/25 rounded-full blur-[160px]"></div>
+        <div class="absolute bottom-[10%] right-[-5%] w-[40vw] h-[40vw] bg-cyan-100/20 rounded-full blur-[140px]"></div>
+    </div>
+
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/80 border-b border-slate-200/60">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div
+                class="text-sm font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-slate-900 via-slate-700 to-neonBlue uppercase font-sans">
+                NAGA SAI LALITHA KAYALA
+            </div>
+
+            <nav
+                class="hidden md:flex items-center space-x-1 bg-slate-100/80 p-1 rounded-full border border-slate-200/50 shadow-sm">
+                <a href="#home"
+                    class="nav-link px-4 py-1.5 text-xs font-medium rounded-full transition-all duration-300 bg-gradient-to-r from-neonBlue to-neonPurple text-white shadow-sm">Home</a>
+                <a href="#about"
+                    class="nav-link px-4 py-1.5 text-xs font-medium rounded-full transition-all duration-300 text-slate-600 hover:text-slate-900">About</a>
+                <a href="#education"
+                    class="nav-link px-4 py-1.5 text-xs font-medium rounded-full transition-all duration-300 text-slate-600 hover:text-slate-900">Education</a>
+                <a href="#certificates"
+                    class="nav-link px-4 py-1.5 text-xs font-medium rounded-full transition-all duration-300 text-slate-600 hover:text-slate-900">Certificates</a>
+                <a href="#skills"
+                    class="nav-link px-4 py-1.5 text-xs font-medium rounded-full transition-all duration-300 text-slate-600 hover:text-slate-900">Skills</a>
+                <a href="#projects"
+                    class="nav-link px-4 py-1.5 text-xs font-medium rounded-full transition-all duration-300 text-slate-600 hover:text-slate-900">Projects</a>
+                <a href="#journey"
+                    class="nav-link px-4 py-1.5 text-xs font-medium rounded-full transition-all duration-300 text-slate-600 hover:text-slate-900">Journey</a>
+                <a href="#contact"
+                    class="nav-link px-4 py-1.5 text-xs font-medium rounded-full transition-all duration-300 text-slate-600 hover:text-slate-900">Contact</a>
+            </nav>
+
+            <button id="menu-btn" class="md:hidden text-slate-600 hover:text-slate-900 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <div id="mobile-menu"
+        class="hidden fixed inset-x-0 top-[60px] bg-white/95 backdrop-blur-xl border-b border-slate-200 z-40 p-6 flex flex-col space-y-3 md:hidden shadow-xl">
+        <a href="#home"
+            class="mobile-link text-slate-600 hover:text-slate-900 text-sm py-2 border-b border-slate-100">Home</a>
+        <a href="#about"
+            class="mobile-link text-slate-600 hover:text-slate-900 text-sm py-2 border-b border-slate-100">About</a>
+        <a href="#education"
+            class="mobile-link text-slate-600 hover:text-slate-900 text-sm py-2 border-b border-slate-100">Education</a>
+        <a href="#certificates"
+            class="mobile-link text-slate-600 hover:text-slate-900 text-sm py-2 border-b border-slate-100">Certificates</a>
+        <a href="#skills"
+            class="mobile-link text-slate-600 hover:text-slate-900 text-sm py-2 border-b border-slate-100">Skills</a>
+        <a href="#projects"
+            class="mobile-link text-slate-600 hover:text-slate-900 text-sm py-2 border-b border-slate-100">Projects</a>
+        <a href="#journey"
+            class="mobile-link text-slate-600 hover:text-slate-900 text-sm py-2 border-b border-slate-100">Journey</a>
+        <a href="#contact"
+            class="mobile-link text-slate-600 hover:text-slate-900 text-sm py-2 border-b border-slate-100">Contact</a>
+    </div>
+
+    <main class="max-w-7xl mx-auto px-6 relative z-10">
+
+        <section id="home"
+            class="min-h-[calc(100vh-80px)] flex flex-col md:flex-row items-center justify-between py-16 gap-12">
+            <div class="flex-1 space-y-6 text-left max-w-2xl">
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-none text-slate-900">
+                    Hi, I'm <br class="hidden md:block">
+                    <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-neonBlue via-indigo-600 to-neonPurple">
+                        Naga Sai Lalitha Kayala
+                    </span>
+                </h1>
+
+                <div class="text-lg md:text-xl font-medium text-slate-600">
+                    Final-Year Graduate & Aspiring <span id="typing-text"
+                        class="text-slate-900 font-semibold cursor-blink"></span>
+                </div>
+
+                <p class="text-slate-600 text-sm md:text-base leading-relaxed max-w-xl">
+                    Passionate about web development, intuitive design frameworks, and building scalable engineering
+                    assets using the MERN Stack, Python, Java, and AIML.
+                </p>
+
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="#projects"
+                        class="bg-gradient-to-r from-neonBlue to-indigo-600 text-white font-medium text-sm px-6 py-3 rounded-full shadow-md hover:shadow-lg hover:shadow-blue-500/10 hover:scale-[1.02] active:scale-[0.98] transition duration-300 flex items-center gap-2">
+                        Explore My Work
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                    <a href="./Naga_Sai_Lalitha_Kayala_Resume.pdf" download="Naga_Sai_Lalitha_Kayala_Resume.pdf"
+                        class="border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 text-slate-700 hover:text-slate-900 text-sm px-6 py-3 rounded-full transition duration-300 flex items-center gap-2 shadow-sm">
+                        <svg class="w-4 h-4 text-neonBlue" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                        </svg>
+                        Download Resume
+                    </a>
+                </div>
+
+                <div class="flex items-center space-x-4 pt-6 text-slate-400">
+                    <a href="https://github.com/Lalitha20-hub" target="_blank"
+                        class="hover:text-slate-900 transition transform hover:scale-110 duration-200">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.008.069-.008 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.577.688.479C19.138 20.164 22 16.418 22 12c0-5.523-4.477-10-10-10z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/naga-sai-lalitha-kayala" target="_blank"
+                        class="hover:text-neonBlue transition transform hover:scale-110 duration-200">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.hackerrank.com/profile/nagasailalithak1" target="_blank"
+                        class="hover:text-hackerGreen transition transform hover:scale-110 duration-200"
+                        title="HackerRank Profile">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 0a12 12 0 00-4.4 23.2c.1.1.2.1.3-.1V19c-.3 0-.6-.1-.9-.2l-.6-.3c-.3-.2-.5-.5-.6-.8l-.3-.6c-.1-.3-.1-.7-.1-1v-4.1H4a1 1 0 01-.8-1.5l3.8-5.3a2.3 2.3 0 013.2-.6l.7.5c.3.2.5.5.7.9l.4.7c.1.3.1.6.1.9v3.4h4.1a1 1 0 01.8 1.5l-3.8 5.3a2.3 2.3 0 01-3.2.6l-.2-.1v3a10 10 0 106.1-18.7z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex-1 flex justify-center relative">
+                <div
+                    class="relative w-72 h-72 md:w-85 md:h-85 rounded-full border border-slate-200 p-2 flex items-center justify-center backdrop-blur-md bg-white/40 shadow-md">
+                    <div class="absolute -left-4 bottom-4 w-20 h-20 bg-blue-200/40 rounded-full blur-2xl"></div>
+                    <div class="absolute -right-6 top-8 w-16 h-16 bg-purple-200/30 rounded-full blur-2xl"></div>
+                    <div
+                        class="absolute top-4 left-4 rounded-[28px] border border-white/80 bg-white/85 px-4 py-3 shadow-2xl backdrop-blur-xl">
+                        <div class="flex items-center gap-3">
+                            <span
+                                class="flex h-10 w-10 items-center justify-center rounded-2xl bg-neonBlue/10 text-neonBlue">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 11c1.657 0 3-1.343 3-3V5a3 3 0 00-6 0v3c0 1.657 1.343 3 3 3z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 11h14a2 2 0 012 2v7a2 2 0 01-2 2H5a2 2 0 01-2-2v-7a2 2 0 012-2z" />
+                                </svg>
+                            </span>
+                            <div>
+                                <p class="text-[10px] uppercase tracking-[0.3em] text-slate-500">Secure</p>
+                                <p class="font-semibold text-slate-900 text-sm">Trust built in</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="absolute inset-0 rounded-full border border-dashed border-slate-300 animate-spin-slow will-change-transform">
+                    </div>
+
+                    <div
+                        class="w-full h-full rounded-full overflow-hidden flex items-center justify-center relative border border-slate-200/60 shadow-inner bg-gradient-to-b from-slate-50 to-white">
+                        <img src="lalitha_photo.jpeg" alt="Naga Sai Lalitha Kayala"
+                            class="w-full h-full object-cover object-center scale-105"
+                            onerror="this.style.display='none'; document.getElementById('avatar-fallback').classList.remove('hidden');">
+
+                        <div id="avatar-fallback"
+                            class="hidden absolute inset-0 flex items-center justify-center flex-col bg-slate-50">
+                            <svg class="w-16 h-16 text-slate-300" fill="none" stroke="currentColor" stroke-width="1.5"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z">
+                                </path>
+                            </svg>
+                            <div
+                                class="absolute font-mono text-[9px] tracking-widest text-blue-600 bg-white border border-slate-200 px-3 py-1 rounded-full shadow-sm bottom-6">
+                                &lt; FULLSTACK &gt;
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-24 border-t border-slate-200/60">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+                <div class="md:col-span-4 sticky top-24">
+                    <h2 class="text-2xl font-bold uppercase tracking-wider text-slate-800">About Me</h2>
+                    <p class="text-xs text-neonBlue font-mono mt-1 tracking-widest">THE MOTIVATION</p>
+
+                    <div
+                        class="mt-6 bg-slate-900 border border-slate-800 rounded-xl p-4 font-mono text-[11px] text-slate-400 hidden md:block shadow-xl">
+                        <div class="flex items-center space-x-1.5 mb-3 border-b border-slate-800 pb-2">
+                            <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-green-500/80"></span>
+                            <span class="text-[10px] text-slate-500 pl-1">profile_analytics.sh</span>
+                        </div>
+                        <p class="text-emerald-400">~ status: active</p>
+                        <p class="text-purple-400">~ stack: MERN / Python / AIML</p>
+                        <p class="text-cyan-400">~ objective: Scalable Systems</p>
+                    </div>
+                </div>
+                <div
+                    class="md:col-span-8 bg-white border border-slate-200/80 p-8 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+                    <p class="text-slate-600 leading-relaxed text-sm md:text-base mb-4">
+                        I am a final-year Computer Science student deeply invested in building efficient web
+                        applications, modern diagnostic intelligence tools, and elegant programmatic frameworks. My
+                        hands-on background cuts across software development lifecycles, structured algorithms, and
+                        iterative architecture planning.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed text-sm md:text-base">
+                        I enjoy bridging engineering gaps between client experiences and microservice reliability.
+                        Through clean code philosophies and responsive design modules, my target remains developing
+                        digital solutions that translate user workflows into performant infrastructure.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="py-24 border-t border-slate-200/60">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+                <div class="md:col-span-4 sticky top-24">
+                    <h2 class="text-2xl font-bold uppercase tracking-wider text-slate-800">Education</h2>
+                    <p class="text-xs text-neonPurple font-mono mt-1 tracking-widest">THE FOUNDATION</p>
+                </div>
+                <div class="md:col-span-8 space-y-6">
+                    <div
+                        class="bg-white border border-slate-200/80 p-6 rounded-2xl flex justify-between items-center flex-wrap gap-4 glow-card border-l-4 border-l-neonPurple">
+                        <div class="flex items-center gap-4">
+                            <div class="p-3 bg-purple-50 rounded-xl text-neonPurple border border-purple-100">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 14l9-5-9-5-9 5 9 5zm0 0v6m4-3a4 4 0 01-8 0v-3"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-base md:text-lg font-bold text-slate-900">Bachelor’s Degree in Computer
+                                    Science</h3>
+                                <p class="text-sm text-slate-500">Aditya Degree College</p>
+                            </div>
+                        </div>
+                        <span
+                            class="text-xs font-mono px-3 py-1 bg-slate-100 border border-slate-200 text-slate-700 rounded-full shadow-sm">Class
+                            of 2027</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certificates" class="py-24 border-t border-slate-200/60">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+                <div class="md:col-span-4 sticky top-24">
+                    <h2 class="text-2xl font-bold uppercase tracking-wider text-slate-800">Certificates</h2>
+                    <p class="text-xs text-neonBlue font-mono mt-1 tracking-widest">CONTINUOUS LEARNING</p>
+                </div>
+                <div class="md:col-span-8 space-y-6">
+                    <div
+                        class="bg-white border border-slate-200/80 p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+                        <div class="flex items-start gap-4">
+                            <div class="p-3 bg-slate-50 rounded-xl text-neonBlue border border-slate-200">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8c.628 0 1.21.116 1.742.325a4.992 4.992 0 013.813 4.684A5 5 0 0112 18a5 5 0 01-5-5c0-2.21 1.343-4.093 3.281-4.85A4.978 4.978 0 0112 8z">
+                                    </path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8V4m0 0L8 8m4-4l4 4"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-base md:text-lg font-bold text-slate-900">Google Cybersecurity
+                                    Certificate</h3>
+                                <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+                                    Professional certificate on Coursera covering cybersecurity fundamentals, risk
+                                    assessment, identity protection, and incident response best practices.
+                                </p>
+                                <a href="https://coursera.org/share/54c6bf414fe27b0e755226e0225c91ff" target="_blank"
+                                    class="inline-flex items-center gap-2 mt-4 text-xs font-bold uppercase tracking-widest text-white bg-neonBlue hover:bg-blue-600 px-5 py-3 rounded-full transition duration-300 shadow-sm">
+                                    View Certificate
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-white border border-slate-200/80 p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+                        <div class="flex items-start gap-4">
+                            <div class="p-3 bg-slate-50 rounded-xl text-neonPurple border border-slate-200">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 20h9">
+                                    </path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 4h9m-9 8h9m-9 4h9M3 5h.01M3 9h.01M3 13h.01M3 17h.01M3 21h.01"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-base md:text-lg font-bold text-slate-900">Google AI Certificate</h3>
+                                <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+                                    Coursera credential for core AI concepts, machine learning workflows, and practical
+                                    model implementation techniques.
+                                </p>
+                                <a href="https://coursera.org/share/ff5bc79dcea747c3c3d8ca666cdb4569" target="_blank"
+                                    class="inline-flex items-center gap-2 mt-4 text-xs font-bold uppercase tracking-widest text-white bg-neonPurple hover:bg-violet-600 px-5 py-3 rounded-full transition duration-300 shadow-sm">
+                                    View Certificate
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-white border border-slate-200/80 p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+                        <div class="flex items-start gap-4">
+                            <div class="p-3 bg-slate-50 rounded-xl text-neonCyan border border-slate-200">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8c.628 0 1.21.116 1.742.325a4.992 4.992 0 013.813 4.684A5 5 0 0112 18a5 5 0 01-5-5c0-2.21 1.343-4.093 3.281-4.85A4.978 4.978 0 0112 8z">
+                                    </path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8V4m0 0L8 8m4-4l4 4"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-base md:text-lg font-bold text-slate-900">IBM IT Support Certificate
+                                </h3>
+                                <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+                                    Hands-on IT support training with device troubleshooting, networking fundamentals,
+                                    and system administration best practices.
+                                </p>
+                                <a href="https://coursera.org/share/603150747d848ddf2752ebf4d20cfe47" target="_blank"
+                                    class="inline-flex items-center gap-2 mt-4 text-xs font-bold uppercase tracking-widest text-white bg-slate-900 hover:bg-slate-700 px-5 py-3 rounded-full transition duration-300 shadow-sm">
+                                    View Certificate
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-white border border-slate-200/80 p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+                        <div class="flex items-start gap-4">
+                            <div class="p-3 bg-slate-50 rounded-xl text-hackerGreen border border-slate-200">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 9v6m3-3H9"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M7 18h10M7 6h10"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-base md:text-lg font-bold text-slate-900">Additional Professional
+                                    Training</h3>
+                                <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+                                    Ongoing credentials in Cisco C Essentials 1 &amp; 2, Python Essentials 1 &amp; 2,
+                                    AWS fundamentals, and ULearn AI &amp; ML training modules.
+                                </p>
+                                <div class="mt-4 grid gap-2 text-xs font-medium text-slate-700">
+                                    <span class="inline-flex items-center gap-2"><span
+                                            class="h-2 w-2 rounded-full bg-neonBlue"></span>Cisco C Essentials 1</span>
+                                    <span class="inline-flex items-center gap-2"><span
+                                            class="h-2 w-2 rounded-full bg-neonBlue"></span>Cisco C Essentials 2</span>
+                                    <span class="inline-flex items-center gap-2"><span
+                                            class="h-2 w-2 rounded-full bg-neonBlue"></span>Python Essentials 1</span>
+                                    <span class="inline-flex items-center gap-2"><span
+                                            class="h-2 w-2 rounded-full bg-neonBlue"></span>Python Essentials 2</span>
+                                    <span class="inline-flex items-center gap-2"><span
+                                            class="h-2 w-2 rounded-full bg-neonBlue"></span>AWS Fundamentals</span>
+                                    <span class="inline-flex items-center gap-2"><span
+                                            class="h-2 w-2 rounded-full bg-neonBlue"></span>ULearn AI &amp; ML</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-24 border-t border-slate-200/60">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+                <div class="md:col-span-4 sticky top-24">
+                    <h2 class="text-2xl font-bold uppercase tracking-wider text-slate-800">Tech Stack</h2>
+                    <p class="text-xs text-neonCyan font-mono mt-1 tracking-widest">THE TOOLKIT</p>
+
+                    <div
+                        class="mt-6 border border-slate-200 bg-white rounded-xl p-4 font-mono text-[11px] text-slate-500 hidden md:block shadow-sm">
+                        <div class="flex items-center justify-between border-b border-slate-100 pb-2 mb-2">
+                            <span class="text-hackerGreen font-bold flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-hackerGreen animate-ping"></span>
+                                HackerRank Verified
+                            </span>
+                            <a href="https://www.hackerrank.com/profile/nagasailalithak1" target="_blank"
+                                class="text-[10px] text-slate-400 hover:text-hackerGreen underline">View Profile</a>
+                        </div>
+                        <p class="text-slate-700 font-medium">Problem Solving Core Matrix</p>
+                        <p class="text-[10px] text-slate-400 mt-1">Status: Certified Logic Explorer</p>
+                    </div>
+                </div>
+
+                <div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div
+                        class="bg-white border border-slate-200 p-6 rounded-2xl flex flex-col justify-between glow-card group">
+                        <div class="flex gap-4">
+                            <div
+                                class="text-neonBlue p-2.5 bg-slate-50 rounded-xl h-fit border border-slate-100 group-hover:bg-blue-50 transition duration-300">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-xs font-mono text-slate-400 uppercase tracking-widest mb-2">Frontend
+                                    Layer</h4>
+                                <div class="flex flex-wrap gap-1.5 mb-3">
+                                    <span
+                                        class="text-xs bg-slate-50 border border-slate-200 px-2.5 py-0.5 rounded-md text-slate-700 shadow-sm">HTML5</span>
+                                    <span
+                                        class="text-xs bg-slate-50 border border-slate-200 px-2.5 py-0.5 rounded-md text-slate-700 shadow-sm">CSS3</span>
+                                    <span
+                                        class="text-xs bg-slate-50 border border-slate-200 px-2.5 py-0.5 rounded-md text-slate-700 shadow-sm">React.js</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="w-full bg-slate-900 border border-slate-950 rounded-xl p-3 mt-4 shadow-inner font-mono text-[11px] text-slate-400">
+                            <p class="text-blue-400">&lt;div class="flex animate-fade"&gt;</p>
+                            <p class="pl-3 text-slate-500">&lt;Navbar state="active" /&gt;</p>
+                            <p class="text-blue-400">&lt;/div&gt;</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-white border border-slate-200 p-6 rounded-2xl flex flex-col justify-between glow-card group">
+                        <div class="flex gap-4">
+                            <div
+                                class="text-neonPurple p-2.5 bg-slate-50 rounded-xl h-fit border border-slate-100 group-hover:bg-purple-50 transition duration-300">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 12h14M5 12a2 2 0 012-2h10a2 2 0 012 2m-14 0a2 2 0 002 2h10a2 2 0 002-2M7 8h10M7 16h10">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-xs font-mono text-slate-400 uppercase tracking-widest mb-2">Backend
+                                    Systems</h4>
+                                <div class="flex flex-wrap gap-1.5 mb-3">
+                                    <span
+                                        class="text-xs bg-slate-50 border border-slate-200 px-2.5 py-0.5 rounded-md text-slate-700 shadow-sm">Node.js</span>
+                                    <span
+                                        class="text-xs bg-slate-50 border border-slate-200 px-2.5 py-0.5 rounded-md text-slate-700 shadow-sm">Express.js</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="w-full bg-slate-900 border border-slate-950 rounded-xl p-3 mt-4 shadow-inner font-mono text-[11px] text-slate-400">
+                            <p class="text-purple-400">app.use('/api', coreRoutes);</p>
+                            <p class="text-slate-500">res.status(200).json({ status });</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-white border border-slate-200 p-6 rounded-2xl flex flex-col justify-between glow-card group">
+                        <div class="flex gap-4">
+                            <div
+                                class="text-emerald-600 p-2.5 bg-slate-50 rounded-xl h-fit border border-slate-100 group-hover:bg-emerald-50 transition duration-300">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 7v10c0 2.21 3.58 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.58 4 8 4s8-1.79 8-4M4 7c0-2.21 3.58-4 8-4s8 1.79 8 4m0 5c0 2.21-3.58 4-8 4s-8-1.79-8-4">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-xs font-mono text-slate-400 uppercase tracking-widest mb-2">Database
+                                    Layer</h4>
+                                <div class="flex flex-wrap gap-1.5 mb-3">
+                                    <span
+                                        class="text-xs bg-slate-50 border border-slate-200 px-2.5 py-0.5 rounded-md text-slate-700 shadow-sm">MongoDB</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="w-full bg-slate-900 border border-slate-950 rounded-xl p-3 mt-4 shadow-inner font-mono text-[11px] text-slate-400 space-y-1">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div><span
+                                    class="text-emerald-400">Mongoose Pipeline Linked</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-white border border-slate-200 p-6 rounded-2xl flex flex-col justify-between glow-card group">
+                        <div class="flex gap-4">
+                            <div
+                                class="text-amber-600 p-2.5 bg-slate-50 rounded-xl h-fit border border-slate-100 group-hover:bg-amber-50 transition duration-300">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-xs font-mono text-slate-400 uppercase tracking-widest mb-2">Languages
+                                </h4>
+                                <div class="flex flex-wrap gap-1.5 mb-3">
+                                    <span
+                                        class="text-xs bg-slate-50 border border-slate-200 px-2.5 py-0.5 rounded-md text-slate-700 shadow-sm">Java</span>
+                                    <span
+                                        class="text-xs bg-slate-50 border border-slate-200 px-2.5 py-0.5 rounded-md text-slate-700 shadow-sm">Python</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="w-full bg-slate-900 border border-slate-950 rounded-xl p-3 mt-4 shadow-inner font-mono text-[11px] text-slate-400 flex justify-between items-center">
+                            <span class="text-amber-400">public class Engine {}</span>
+                            <span class="text-blue-400">def init(): core</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-24 border-t border-slate-200/60">
+            <div class="mb-12">
+                <h2 class="text-2xl font-bold uppercase tracking-wider text-slate-800">Handcrafted Projects</h2>
+                <p class="text-xs text-neonBlue font-mono mt-1 tracking-widest">THE SHOWCASE</p>
+            </div>
+
+            <div class="space-y-8">
+                <div
+                    class="bg-white border border-slate-200 p-6 md:p-8 transition duration-300 grid grid-cols-1 lg:grid-cols-12 gap-8 shadow-sm hover:shadow-xl relative group border-t-4 border-t-neonCyan rounded-2xl">
+                    <div
+                        class="absolute top-4 right-4 bg-cyan-50 border border-neonCyan/20 text-neonCyan text-[10px] font-mono uppercase px-3 py-1 rounded-full shadow-sm font-semibold tracking-wider">
+                        Major Project</div>
+
+                    <div class="lg:col-span-7 space-y-4">
+                        <span class="text-xs font-mono text-neonCyan tracking-widest uppercase font-semibold">Full-Stack
+                            System Integration</span>
+                        <h3
+                            class="text-xl md:text-2xl font-bold text-slate-900 group-hover:text-neonCyan transition duration-300">
+                            <a href="https://lalitha20-hub.github.io/Former-assistance/" target="_blank"
+                                class="hover:underline flex items-center gap-2">
+                                Road Service Website
+                                <svg class="w-4 h-4 inline text-slate-400 group-hover:text-neonCyan" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                    </path>
+                                </svg>
+                            </a>
+                        </h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            A production-ready full-stack assistance interface structured to aggregate on-demand
+                            roadside dispatch tracking, authenticated state rules, and dynamic status syncing.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-slate-600 font-medium">
+                            <div class="flex items-center gap-2"><span class="text-neonCyan">✔</span> Secure Encrypted
+                                Web Access via JWT</div>
+                            <div class="flex items-center gap-2"><span class="text-neonCyan">✔</span> Real-Time Position
+                                Coordinates API</div>
+                            <div class="flex items-center gap-2"><span class="text-neonCyan">✔</span> Asynchronous
+                                Microservice Sync Gateway</div>
+                            <div class="flex items-center gap-2"><span class="text-neonCyan">✔</span> Client Payment
+                                Lifecycle Verification Flow</div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-3">
+                            <span
+                                class="text-xs font-mono bg-slate-50 text-slate-600 border border-slate-200 px-3 py-0.5 rounded-md shadow-sm">React.js</span>
+                            <span
+                                class="text-xs font-mono bg-slate-50 text-slate-600 border border-slate-200 px-3 py-0.5 rounded-md shadow-sm">Node.js</span>
+                            <span
+                                class="text-xs font-mono bg-slate-50 text-slate-600 border border-slate-200 px-3 py-0.5 rounded-md shadow-sm">Express.js</span>
+                            <span
+                                class="text-xs font-mono bg-slate-50 text-slate-600 border border-slate-200 px-3 py-0.5 rounded-md shadow-sm">MongoDB</span>
+                        </div>
+
+                        <div class="pt-4">
+                            <a href="https://lalitha20-hub.github.io/Former-assistance/" target="_blank"
+                                class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white bg-slate-900 hover:bg-neonCyan px-5 py-2.5 rounded-xl transition duration-300 shadow-sm">
+                                Launch Live Instance
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div
+                        class="lg:col-span-5 bg-slate-900 border border-slate-950 rounded-2xl p-5 font-mono text-[11px] text-slate-400 shadow-inner flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-center border-b border-slate-800 pb-3 mb-3">
+                                <span class="text-neonCyan font-bold tracking-wider">APP LIVE ROUTER LOGS</span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                            </div>
+                            <p class="text-slate-500">POST /api/auth/jwt-verify -> <span
+                                    class="text-emerald-400 font-semibold">200 SUCCESS</span></p>
+                            <p class="text-slate-500">GET /api/maps/assistance-track -> <span
+                                    class="text-amber-400 font-semibold">STREAM_CONNECTED</span></p>
+                        </div>
+                        <div
+                            class="mt-6 border-t border-slate-800 pt-3 flex justify-between items-center text-[10px] text-slate-500">
+                            <span>Latency: 14ms</span>
+                            <span>System State: Stable</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div
+                        class="bg-white border border-slate-200 rounded-2xl p-6 flex flex-col justify-between shadow-sm hover:shadow-xl transition duration-300 group">
+                        <div>
+                            <div
+                                class="w-full flex items-center space-x-1.5 mb-4 bg-slate-50 p-2 rounded-xl border border-slate-100">
+                                <span class="w-2 h-2 rounded-full bg-slate-300"></span>
+                                <span class="w-2 h-2 rounded-full bg-slate-300"></span>
+                                <span class="text-[10px] font-mono text-slate-400 pl-1">portfolio_view.app</span>
+                            </div>
+                            <span
+                                class="text-xs font-mono text-neonBlue tracking-wider uppercase font-semibold">Portfolio
+                                UI</span>
+                            <h3
+                                class="text-lg font-bold text-slate-900 mt-1 group-hover:text-neonBlue transition duration-300">
+                                Portfolio Website</h3>
+                            <p class="text-slate-600 text-xs md:text-sm mt-2 leading-relaxed">
+                                A tailored portfolio engine built to highlight technical achievements, contextual
+                                project indices, and engineering workflows.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 mt-5">
+                            <span
+                                class="text-[11px] font-mono bg-slate-50 text-slate-600 border border-slate-200 px-2.5 py-0.5 rounded-md shadow-sm">React.js</span>
+                            <span
+                                class="text-[11px] font-mono bg-slate-50 text-slate-600 border border-slate-200 px-2.5 py-0.5 rounded-md shadow-sm">Tailwind
+                                CSS</span>
+                        </div>
+                        <div class="pt-5">
+                            <a href="https://lalitha20-hub.github.io/Portfilo/" target="_blank"
+                                class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-white bg-neonBlue hover:bg-blue-600 px-4 py-3 rounded-full transition duration-300 shadow-sm">
+                                View Live Portfolio
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-white border border-slate-200 rounded-2xl p-6 flex flex-col justify-between shadow-sm hover:shadow-xl transition duration-300 group">
+                        <div>
+                            <div
+                                class="w-full flex justify-between items-end h-9 mb-4 bg-slate-50 px-4 py-1.5 rounded-xl border border-slate-100">
+                                <div class="w-2.5 bg-sky-200 h-4 rounded-t"></div>
+                                <div class="w-2.5 bg-sky-300 h-6 rounded-t"></div>
+                                <div class="w-2.5 bg-neonCyan h-8 rounded-t shadow-sm"></div>
+                                <div class="w-2.5 bg-sky-100 h-3 rounded-t"></div>
+                            </div>
+                            <span class="text-xs font-mono text-neonCyan tracking-wider uppercase font-semibold">Weather
+                                Intelligence</span>
+                            <h3
+                                class="text-lg font-bold text-slate-900 mt-1 group-hover:text-neonCyan transition duration-300">
+                                Weather Forecast App</h3>
+                            <p class="text-slate-600 text-xs md:text-sm mt-2 leading-relaxed">
+                                A responsive weather dashboard that fetches live forecasts, geolocation data, and
+                                atmospheric insights for any city.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 mt-5">
+                            <span
+                                class="text-[11px] font-mono bg-slate-50 text-slate-600 border border-slate-200 px-2.5 py-0.5 rounded-md shadow-sm">React.js</span>
+                            <span
+                                class="text-[11px] font-mono bg-slate-50 text-slate-600 border border-slate-200 px-2.5 py-0.5 rounded-md shadow-sm">OpenWeather
+                                API</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="journey" class="py-24 border-t border-slate-200/60">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+                <div class="md:col-span-4 sticky top-24">
+                    <h2 class="text-2xl font-bold uppercase tracking-wider text-slate-800">Journey</h2>
+                    <p class="text-xs text-neonPurple font-mono mt-1 tracking-widest">GROWTH & LEARNING</p>
+                </div>
+                <div class="md:col-span-8">
+                    <div class="relative border-l border-slate-200 pl-6 space-y-8">
+                        <div
+                            class="relative bg-white border border-slate-200 p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+                            <div
+                                class="absolute -left-[33px] top-7 bg-white border-2 border-neonPurple w-3.5 h-3.5 rounded-full shadow-sm">
+                            </div>
+                            <h4 class="text-base font-bold text-slate-900">Continuous Technical Improvement</h4>
+                            <p class="text-xs md:text-sm text-slate-600 mt-2 leading-relaxed">Deep-dives into server
+                                load tracking, asynchronous database architecture optimizations, and foundational
+                                testing models for machine learning deployments.</p>
+                        </div>
+                        <div
+                            class="relative bg-white border border-slate-200 p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+                            <div
+                                class="absolute -left-[33px] top-7 bg-white border-2 border-neonPurple w-3.5 h-3.5 rounded-full shadow-sm">
+                            </div>
+                            <h4 class="text-base font-bold text-slate-900">Hands-on Architectural Practice</h4>
+                            <p class="text-xs md:text-sm text-slate-600 mt-2 leading-relaxed">Translating complex user
+                                interface workflows, static templates, and architectural mock frames into performant
+                                production elements.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-24 border-t border-slate-200/60">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <h2 class="text-2xl font-bold uppercase tracking-wider text-slate-800">Connect</h2>
+                        <p class="text-xs text-neonBlue font-mono mt-1 tracking-widest">SAY HELLO</p>
+                    </div>
+                    <div class="space-y-4 text-xs md:text-sm text-gray-600">
+                        <div
+                            class="flex items-center gap-4 bg-white border border-slate-200 p-4 rounded-xl shadow-sm transition duration-300 hover:border-slate-300">
+                            <span class="text-lg text-neonBlue">📧</span>
+                            <a href="mailto:nagasailalithakayala6@gmail.com"
+                                class="hover:text-neonBlue transition text-slate-700 font-medium">nagasailalithakayala6@gmail.com</a>
+                        </div>
+                        <div
+                            class="flex items-center gap-4 bg-white border border-slate-200 p-4 rounded-xl shadow-sm transition duration-300 hover:border-slate-300">
+                            <span class="text-lg text-neonBlue">📞</span>
+                            <a href="tel:+919505706427"
+                                class="hover:text-neonBlue transition text-slate-700 font-medium">+91 9505706427</a>
+                        </div>
+                        <div class="flex items-center gap-4 bg-white border border-slate-200 p-4 rounded-xl shadow-sm">
+                            <span class="text-lg text-neonBlue">📍</span>
+                            <span class="text-slate-700 font-medium">Gudivada, Krishna District, Andhra Pradesh</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-3 pt-2">
+                        <a href="https://github.com/Lalitha20-hub" target="_blank"
+                            class="bg-white hover:bg-slate-50 border border-slate-200 text-xs font-semibold text-slate-600 py-3 rounded-xl flex items-center justify-center transition duration-200 w-1/3 shadow-sm">GitHub</a>
+                        <a href="https://www.linkedin.com/in/naga-sai-lalitha-kayala" target="_blank"
+                            class="bg-white hover:bg-slate-50 border border-slate-200 text-xs font-semibold text-slate-600 py-3 rounded-xl flex items-center justify-center transition duration-200 w-1/3 shadow-sm">LinkedIn</a>
+                        <a href="https://www.hackerrank.com/profile/nagasailalithak1" target="_blank"
+                            class="bg-white hover:bg-slate-50 border border-slate-200 text-xs font-semibold text-slate-600 py-3 rounded-xl flex items-center justify-center transition duration-200 w-1/3 hover:text-hackerGreen shadow-sm">HackerRank</a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <form onsubmit="event.preventDefault();"
+                        class="bg-white border border-slate-200 p-6 rounded-2xl space-y-4 shadow-sm">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <input type="text" placeholder="Name"
+                                class="w-full bg-slate-50 border border-slate-200 focus:border-neonBlue focus:bg-white rounded-xl px-4 py-3 text-xs text-slate-800 focus:outline-none transition shadow-sm" />
+                            <input type="email" placeholder="Email"
+                                class="w-full bg-slate-50 border border-slate-200 focus:border-neonBlue focus:bg-white rounded-xl px-4 py-3 text-xs text-slate-800 focus:outline-none transition shadow-sm" />
+                        </div>
+                        <textarea rows="4" placeholder="Your Message"
+                            class="w-full bg-slate-50 border border-slate-200 focus:border-neonBlue focus:bg-white rounded-xl px-4 py-3 text-xs text-slate-800 focus:outline-none transition resize-none shadow-sm"></textarea>
+
+                        <div class="flex gap-4">
+                            <button type="submit"
+                                class="flex-1 bg-slate-900 hover:bg-gradient-to-r hover:from-neonBlue hover:to-neonPurple text-white text-xs font-bold py-3.5 rounded-xl hover:shadow-md transition duration-300 uppercase tracking-widest">
+                                Send Connection Request
+                            </button>
+                            <a href="./Naga_Sai_Lalitha_Kayala_Resume.pdf" download="Naga_Sai_Lalitha_Kayala_Resume.pdf"
+                                class="border border-slate-200 hover:bg-slate-50 text-slate-700 p-3.5 rounded-xl transition duration-200 flex items-center justify-center shadow-sm"
+                                title="Download CV">
+                                <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-slate-200 py-8 bg-white mt-12 relative z-10">
+        <div
+            class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-[11px] text-slate-400">
+            <p>© 2026 Naga Sai Lalitha Kayala. All Rights Reserved.</p>
+            <p class="font-mono tracking-wider">SECURE // MINIMALIST // PRODUCTION ECOSYSTEM</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- Mobile Menu Toggle ---
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // --- Typing Dynamic Text Module ---
+        const words = ["Full-Stack Developer", "MERN Stack Developer", "Python Programmer", "AIML Enthusiast"];
+        let wordIdx = 0;
+        let charIdx = 0;
+        let isDeleting = false;
+        const textElement = document.getElementById('typing-text');
+
+        function type() {
+            const currentWord = words[wordIdx];
+            if (isDeleting) {
+                textElement.textContent = currentWord.substring(0, charIdx - 1);
+                charIdx--;
+            } else {
+                textElement.textContent = currentWord.substring(0, charIdx + 1);
+                charIdx++;
+            }
+
+            if (!isDeleting && charIdx === currentWord.length) {
+                setTimeout(() => isDeleting = true, 2200);
+            } else if (isDeleting && charIdx === 0) {
+                isDeleting = false;
+                wordIdx = (wordIdx + 1) % words.length;
+            }
+
+            setTimeout(type, isDeleting ? 40 : 80);
+        }
+        type();
+
+        // --- Scroll Highlighting Event Stream ---
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section');
+
+        window.addEventListener('scroll', () => {
+            let current = 'home';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 140) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('bg-gradient-to-r', 'from-neonBlue', 'to-neonPurple', 'text-white', 'shadow-sm');
+                link.classList.add('text-slate-600');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.remove('text-slate-600');
+                    link.classList.add('bg-gradient-to-r', 'from-neonBlue', 'to-neonPurple', 'text-white', 'shadow-sm');
+                }
+            });
+        }, { passive: true });
+    </script>
+</body>
+
+</html>
